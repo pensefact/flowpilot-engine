@@ -1,0 +1,10 @@
+services:
+  browser:
+    build:
+      context: ./docker/browser
+    ports:
+      - "9222:9222"   # CDP
+      - "6080:6080"   # noVNC web viewer
+    shm_size: "2g"
+    environment:
+      - DISPLAY=:99
